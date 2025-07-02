@@ -1,0 +1,60 @@
+<!-- 📁 src/main/resources/static/preferences.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>👤 User Preferences</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="prefs-body">
+
+  <header class="header">
+    <h1>👤 User Preferences</h1>
+    <nav class="navbar">
+      <a href="index.html">🏠 Home</a>
+      <a href="#" onclick="logoutUser()">🚪 Logout</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <form id="preferences-form" onsubmit="savePreferences(event)">
+      <label for="email">📧 Your Email:</label>
+      <input type="text" id="email" placeholder="Your Email" readonly />
+
+      <label for="keywords">🗝️ Preferred Keywords (comma separated):</label>
+      <input type="text" id="keywords" placeholder="e.g. AI, Finance, Politics" />
+
+      <label>📂 Preferred Categories:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="category" value="General" /> General</label>
+        <label><input type="checkbox" name="category" value="Technology" /> Technology</label>
+        <label><input type="checkbox" name="category" value="Business" /> Business</label>
+        <label><input type="checkbox" name="category" value="Health" /> Health</label>
+        <label><input type="checkbox" name="category" value="Entertainment" /> Entertainment</label>
+        <label><input type="checkbox" name="category" value="Sports" /> Sports</label>
+        <label><input type="checkbox" name="category" value="Science" /> Science</label>
+      </div>
+
+      <button type="submit">💾 Save Preferences</button>
+    </form>
+
+    <p id="response-message" class="response-message"></p>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 News Aggregator | Built with 💜</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const email = localStorage.getItem("userEmail");
+      if (email) {
+        document.getElementById("email").value = email;
+      }
+    });
+  </script>
+
+  <script src="preferences.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>📊 Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-body">
+
+  <header class="header">
+    <div class="navbar">
+      <a href="index.html">🏠 Home</a>
+      <button onclick="logoutUser()">🚪 Logout</button>
+    </div>
+    <h2>📊 Admin Dashboard</h2>
+  </header>
+
+  <main class="dashboard-container">
+    <section class="stats-panel">
+      <p><strong>Total Users:</strong> <span id="user-count">--</span></p>
+      <p><strong>Total News Articles:</strong> <span id="news-count">--</span></p>
+    </section>
+
+    <section class="chart-panel">
+      <canvas id="categoryChart" width="400" height="200"></canvas>
+    </section>
+
+    <section class="user-list-section">
+      <h3>👥 Registered Users</h3>
+      <ul id="user-list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 News Aggregator | Admin Panel 💼</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

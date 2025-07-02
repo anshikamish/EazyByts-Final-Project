@@ -1,0 +1,247 @@
+/* 🔧 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌸 Body Background */
+body {
+  background-color: #f7d6c5;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* 📰 Headings */
+h1, h2, h3 {
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 📥 Form Container */
+form {
+  max-width: 500px;
+  margin: auto;
+  background-color: #f3edf7;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* 🔲 Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f8f5fb;
+  border: 1px solid #6c648b;
+  color: #222;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input[readonly] {
+  background-color: #f0e8f2;
+  color: #888;
+  cursor: not-allowed;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6c648b;
+  box-shadow: 0 0 8px rgba(108, 100, 139, 0.4);
+}
+
+/* 🟪 Buttons */
+button {
+  background: linear-gradient(135deg, #6c648b, #3d3456);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 100, 139, 0.3);
+  width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #7e73a7, #514568);
+  box-shadow: 0 6px 20px rgba(108, 100, 139, 0.5);
+  transform: translateY(-2px);
+}
+
+/* 🔗 Links */
+a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 💡 Centered Auth Links */
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #000;
+  font-size: 14px;
+}
+
+/* 📰 Cards */
+.card {
+  background-color: #f2eaf7;
+  border: 1px solid #6c648b;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px rgba(108, 100, 139, 0.1);
+}
+
+/* 💬 Comments Section */
+.comment-section {
+  margin-top: 10px;
+  background-color: #f0e5f7;
+  padding: 10px;
+  border-left: 3px solid #6c648b;
+  border-radius: 6px;
+}
+
+/* 📥 Comment Box */
+.comment-box input {
+  width: calc(100% - 100px);
+  margin-right: 10px;
+  background-color: #f8f3fc;
+  border: 1px solid #ccc;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar a,
+.navbar button {
+  background-color: transparent;
+  color: #6c648b;
+  border: 1px solid #6c648b;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  background-color: #6c648b;
+  color: #fff;
+}
+
+/* 🔍 Search + Filter */
+#search-bar,
+#filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+#search-bar input {
+  flex: 1;
+  background-color: #f5eefb;
+  border: 1px solid #6c648b;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* 📋 List (e.g. Registered Users) */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #f2eaf7;
+  margin: 8px 0;
+  padding: 12px;
+  border-left: 5px solid #6c648b;
+  border-radius: 6px;
+}
+
+/* ⚠️ Message Boxes */
+#login-message,
+#register-message,
+#response-message {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+/* 📊 Chart Canvas */
+canvas {
+  background-color: #f5eefb;
+  border: 1px solid #6c648b;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* 🖼️ Dashboard */
+.dashboard-container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f2eaf7;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(108, 100, 139, 0.1);
+}
+
+.stats-panel {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.chart-panel {
+  margin: 20px 0;
+}
+
+.user-list-section {
+  padding-top: 20px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  #search-bar, #filter-bar {
+    flex-direction: column;
+  }
+
+  .stats-panel {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
