@@ -25,7 +25,7 @@ function showNewArticleNotification(title) {
 // 🔄 ✅ Updated to fetch latest 10 articles only
 function fetchLatestNews() {
   const selectedCountry = document.getElementById("country-select")?.value || "in"; // Default to India
-  fetch(`http://localhost:8080/api/news/country?country=${selectedCountry}`)
+  fetch(`/api/news/country?country=${selectedCountry}`)
     .then(response => response.json())
     .then(data => {
       console.log("✅ Latest Articles Loaded:", data);
@@ -51,7 +51,7 @@ function fetchNewsByCountry() {
   const country = document.getElementById("country-select").value;
   if (!country) return;
 
-  fetch(`http://localhost:8080/api/news/country?country=${country}`)
+  fetch(`/api/news/country?country=${country}`)
     .then(res => res.json())
     .then(data => {
       renderNews(data);
@@ -123,7 +123,7 @@ function submitComment(articleId) {
   const content = input.value.trim();
   if (!content) return;
 
-  fetch("http://localhost:8080/api/comments/save", {
+  fetch("/api/comments/save", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -149,7 +149,7 @@ function submitComment(articleId) {
 
 // 🗨️ Load Comments
 function loadComments(articleId) {
-  fetch(`http://localhost:8080/api/comments/article/${articleId}`)
+  fetch(`/api/comments/article/${articleId}`)
     .then(res => res.json())
     .then(data => {
       const section = document.getElementById(`comments-${articleId}`);
@@ -181,7 +181,7 @@ function loadComments(articleId) {
 function searchNews() {
   const keyword = document.getElementById("search-input").value.trim();
   if (!keyword) return;
-  fetch(`http://localhost:8080/api/news/search?keyword=${keyword}`)
+  fetch(`/api/news/search?keyword=${keyword}`)
     .then(res => res.json())
     .then(data => renderNews(data))
     .catch(err => {
@@ -195,7 +195,7 @@ function searchNews() {
 function filterByCategory() {
   const category = document.getElementById("category-select").value;
   if (!category) return fetchLatestNews();
-  fetch(`http://localhost:8080/api/news/category?category=${category}`)
+  fetch(`/api/news/category?category=${category}`)
     .then(res => res.json())
     .then(data => renderNews(data))
     .catch(err => {
@@ -206,7 +206,7 @@ function filterByCategory() {
 }
 
 function fetchNewsFromAPI() {
-  fetch("http://localhost:8080/api/newsapi/fetch", {
+  fetch("/api/newsapi/fetch", {
     method: "GET"
   })
     .then(res => res.text())
