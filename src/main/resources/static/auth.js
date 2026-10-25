@@ -9,14 +9,17 @@ function registerUser(event) {
     role: "USER"
   };
 
-  fetch("http://localhost:8080/api/users/register", {
+  fetch("/api/users/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(user)
   })
-    .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error("Registration failed");
+    return res.json();
+  })
     .then(data => {
       document.getElementById("register-message").innerText = "✅ Registered successfully!";
       window.location.href = "login.html";
@@ -34,7 +37,7 @@ function loginUser(event) {
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
 
-  fetch("http://localhost:8080/api/users/login", {
+  fetch("/api/users/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
