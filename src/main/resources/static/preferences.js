@@ -37,7 +37,7 @@ function savePreferences(event) {
     };
 
     savePromises.push(
-      fetch("http://localhost:8080/api/preferences/save", {
+      fetch("/api/preferences/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
